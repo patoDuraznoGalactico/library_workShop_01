@@ -26,12 +26,12 @@ public class Book {
     @Column(nullable = false ,length = 20)
     private String isbn;
 
-    @OneToMany(mappedBy = "book_id",cascade = CascadeType.ALL,orphanRemoval = false,fetch = FetchType.EAGER)
+    @OneToMany(mappedBy = "book",cascade = CascadeType.ALL,orphanRemoval = false,fetch = FetchType.EAGER)
     @ToString.Exclude
     @EqualsAndHashCode.Exclude
     private List<Reservation> reservations;
 
-    @OneToMany(mappedBy = "book_id",cascade = CascadeType.ALL,orphanRemoval = false,fetch = FetchType.EAGER)
+    @OneToMany(mappedBy = "book",cascade = CascadeType.ALL,orphanRemoval = false,fetch = FetchType.EAGER)
     @ToString.Exclude
     @EqualsAndHashCode.Exclude
     private List<Loan> loans;
